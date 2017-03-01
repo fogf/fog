@@ -3,4 +3,4 @@ from .models import *
 
 
 admin.site.register(Movie)
-admin.site. register(Celebrity)
+admin.site.register(Celebrity)
