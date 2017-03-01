@@ -3,12 +3,12 @@ from django.db import models
 
 class Celebrity(models.Model):
     name = models.CharField(max_length=64, verbose_name="姓名")
-    en_name = models.CharField(max_length=64, verbose_name="英文名（可选）", defualt="", blank=True)
+    en_name = models.CharField(max_length=64, verbose_name="英文名（可选）", default="", blank=True)
     sex = models.SmallIntegerField(verbose_name="性别", choices=((0, "男"), (1, "女"), (3, "其他")))
     birthday = models.DateField(verbose_name="出生日期", null=True)
     #other_en_name = models.CharField(max_length=255, verbose_name="更多外文名", null=True)
-    birth_area = models.CharField(max_length=128, verbose_name="出生地", defualt="", blank=True)
-    profession = models.CharField(max_length=16, verbose_name="职业", defualt="", blank=True)
+    birth_area = models.CharField(max_length=128, verbose_name="出生地", default="", blank=True)
+    profession = models.CharField(max_length=16, verbose_name="职业", default="", blank=True)
 
 
     def __str__(self):
