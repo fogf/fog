@@ -20,6 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY 在部署到生产环境前请在 local_settings.py 中制定
 SECRET_KEY = 'khfa01uvg@l*0iu7soe*d6x$3^tw^uv!q2ml@ro$4d^brq54mg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -30,14 +31,21 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+USER_APPS = [
+    'movies'
+]
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+    'material',
+    'material.frontend',
+    'material.admin',
+    'django.contrib.admin',
+    'rest_framework' # Django rest framework
+] + USER_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -103,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-Hans'
 
 TIME_ZONE = 'UTC'
 
