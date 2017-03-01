@@ -10,6 +10,10 @@ class Celebrity(models.Model):
     birth_area = models.CharField(max_length=128, verbose_name="出生地", defualt="", blank=True)
     profession = models.CharField(max_length=16, verbose_name="职业", defualt="", blank=True)
 
+
+    def __str__(self):
+        return self.name + (' ' + self.en_name if self.en_name else '')
+
     class Meta:
         verbose_name = "人物"
 
@@ -33,6 +37,9 @@ class Movie(models.Model):
     languages = models.CharField(max_length=255, verbose_name="语言")
     other_title = models.CharField(max_length=255, verbose_name="又名")
     country = models.CharField(max_length=16, verbose_name="制片国家/地区")
+
+    def __str__(self):
+        return self.title
 
     class Meta:
         verbose_name = "电影"
