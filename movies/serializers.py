@@ -10,6 +10,7 @@ class MovieSerializer(serializers.HyperlinkedModelSerializer):
 
     directors = CelebritySerializer(many=True, read_only=True)
     scriptwriters = CelebritySerializer(many=True, read_only=True)
+
     class Meta:
         model = Movie
         fields = '__all__'
