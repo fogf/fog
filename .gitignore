@@ -1,1 +1,3 @@
 .idea/*
+fog/__pycache__/*
+movies/__pycache__/*
