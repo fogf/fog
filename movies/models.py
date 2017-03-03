@@ -74,7 +74,7 @@ class MovieReview(models.Model):
 class MovieTag(models.Model):
 
     movie = models.ForeignKey(Movie, verbose_name="电影")
-    tagName = models.TextField(verbose_name="标签名称")
+    tag_name = models.TextField(verbose_name="标签名称")
 
     class Meta:
         verbose_name = "标签"
