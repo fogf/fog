@@ -10,11 +10,12 @@ from http.client import responses
 from django.template.response import SimpleTemplateResponse
 from django.utils import six
 # from django.utils.six.moves.http_client import responses
+from rest_framework.response import Response as RFResponse
 
 from rest_framework.serializers import Serializer
 
 
-class Response(SimpleTemplateResponse):
+class Response(RFResponse):
     """
     An HttpResponse that allows its data to be rendered into
     arbitrary media types.
