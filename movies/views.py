@@ -1,6 +1,5 @@
-from django.shortcuts import render
 from .serializers import *
-from rest_framework import viewsets
+from fog.utils.restful_api import viewsets
 
 
 class MovieViewSet(viewsets.ModelViewSet):
